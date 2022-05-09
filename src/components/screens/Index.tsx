@@ -1,13 +1,12 @@
 import { Dialog } from '@headlessui/react';
 import { useRef, useState } from 'react';
-import { useAuthState } from '~/components/contexts/UserContext';
+
 import { SignInButton } from '~/components/domain/auth/SignInButton';
 import { SignOutButton } from '~/components/domain/auth/SignOutButton';
 import { Head } from '~/components/shared/Head';
 import Auth from '~/components/liff/auth';
 
 function Index() {
-  const { state } = useAuthState();
   const [isOpen, setIsOpen] = useState(true);
   const completeButtonRef = useRef(null);
 

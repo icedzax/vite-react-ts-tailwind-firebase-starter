@@ -1,12 +1,6 @@
-import { Router } from "~/components/router/Router";
-
-
-
-
+import { Router } from '~/components/router/Router';
 
 function Main() {
-
-
   return (
     <main>
       <Router />
