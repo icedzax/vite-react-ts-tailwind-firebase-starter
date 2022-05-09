@@ -4,6 +4,7 @@ import { useAuthState } from '~/components/contexts/UserContext';
 import { SignInButton } from '~/components/domain/auth/SignInButton';
 import { SignOutButton } from '~/components/domain/auth/SignOutButton';
 import { Head } from '~/components/shared/Head';
+import Auth from '~/components/liff/auth';
 
 function Index() {
   const { state } = useAuthState();
@@ -13,27 +14,14 @@ function Index() {
   return (
     <>
       <Head title="TOP PAGE" />
+      <div className="bg-gray-100">
+        {' '}
+        <Auth></Auth>
+      </div>
       <div className="hero min-h-screen">
         <div className="text-center hero-content">
           <div>
-            <h1 className="text-3xl font-bold">
-              <a className="link link-primary" target="_blank" href="https://vitejs.dev/" rel="noreferrer">
-                Vite
-              </a>{' '}
-              +{' '}
-              <a className="link link-primary" target="_blank" href="https://reactjs.org/" rel="noreferrer">
-                React
-              </a>{' '}
-              +{' '}
-              <a className="link link-primary" target="_blank" href="https://www.typescriptlang.org/" rel="noreferrer">
-                TypeScript
-              </a>{' '}
-              +{' '}
-              <a className="link link-primary" target="_blank" href="https://tailwindcss.com/" rel="noreferrer">
-                TailwindCSS
-              </a>{' '}
-              Starter
-            </h1>
+            <h1 className="text-3xl font-bold">TEST</h1>
             <p className="mt-4 text-lg">
               For fast <b>prototyping</b>. Already set up{' '}
               <a
@@ -64,7 +52,7 @@ function Index() {
               .
             </p>
             <div className="mt-4 grid gap-2">
-              {state.state === 'UNKNOWN' ? null : state.state === 'SIGNED_OUT' ? <SignInButton /> : <SignOutButton />}
+              <SignInButton />
               <button onClick={() => setIsOpen(true)}>Display Dialog</button>
             </div>
           </div>
